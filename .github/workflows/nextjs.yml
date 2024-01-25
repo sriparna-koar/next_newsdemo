@@ -1,65 +1,48 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-name: .NET Core Desktop
-
+name: examples
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    branches:
+      - main
 jobs:
-
   build:
-
+    name: Build
+    runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        configuration: [Debug, Release]
-
-    runs-on: windows-latest  # For a list of available runner types, refer to 
-                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
-
+        os:
+          - windows-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-
-    - name: Cache node modules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
-      with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.x
-        
-    - name: Use Node.js 12
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12
-
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@2008f912f56e61277eefaac6d1888b750582aa16
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-
-    - name: Build
-      run: msbuild build.proj /p:PackageOutputDir="${{ env.GITHUB_WORKSPACE }}/nuget-output" /p:Configuration=${{ matrix.configuration }}
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-        Configuration: ${{ matrix.configuration }}
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: Nuget Package
-        path: "${{ env.GITHUB_WORKSPACE }}/nuget-output"
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Setup Node 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+   
+      - name: Prepare
+        run: |
+            mkdir _deploy
+            cp -R examples _deploy
+            cp -R demos/angular-app/dist/angular-app _deploy/angular-app
+            cp -R demos/react-app/build _deploy/react-app
+            cp -R demos/svelte-app/build _deploy/svelte-app
+      - name: Append Analytics
+        run: |
+            node scripts/append-ga.cjs _deploy/examples
+            node scripts/append-ga.cjs _deploy/react-app
+            node scripts/append-ga.cjs _deploy/angular-app
+            node scripts/append-ga.cjs _deploy/svelte-app
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: _deploy
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v1
