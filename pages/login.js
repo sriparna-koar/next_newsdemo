@@ -12,7 +12,7 @@ const Login = () => {
     if (localStorage.getItem("token")) {
       router.push("/");
     }
-  }, []);
+  }, [router]);
   const handleChange = (e) => {
     if (e.target.name == "email") {
       setemail(e.target.value);
@@ -128,7 +128,7 @@ const Login = () => {
                   />
                 </div>
                 <div className="flex items-center justify-between">
-                  <Link href={"/forgot"}>
+                  <Link href={"/forgot"} passHref>
                     <a
                       href="#"
                       className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
@@ -143,7 +143,7 @@ const Login = () => {
                 >
                   Sign in
                 </button>
-                <Link href={"/signup"}>
+                <Link href={"/signup"} passHref>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                     Don’t have an account yet?{" "}
                     <a

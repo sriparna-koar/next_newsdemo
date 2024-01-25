@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import LoadingBar from 'react-top-loading-bar';
@@ -13,22 +11,28 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    router.events.on('routeChangeStart', () => {
+    const handleRouteChangeStart = () => {
       setProgress(40);
-    });
+    };
 
-    router.events.on('routeChangeComplete', () => {
+    const handleRouteChangeComplete = () => {
       setProgress(100);
-    });
+    };
 
-  
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
 
     const token = localStorage.getItem('token');
     if (token) {
       setuser({ value: token });
       setkey(Math.random());
     }
-  }, [router.query]);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, [router.events, router.query]); // Include 'router.events' in the dependency array
 
   const logout = () => {
     localStorage.removeItem('token');

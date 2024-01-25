@@ -9,7 +9,7 @@ const Forgot = () => {
         if(localStorage.getItem('token')){
             router.push('/')
         }
-    },[])
+    },[router])
     return (
         <div>
           <section className="bg-gray-50 dark:bg-gray-900">
@@ -21,10 +21,15 @@ const Forgot = () => {
                   <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
        Forgot Password
                   </h1>
-                  <Link href={'/signup'}><p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                          After confirming password... <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login</a>
-                      </p>
-                      </Link> 
+                  <Link href="/signup" passHref>
+  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+    After confirming password...{' '}
+    <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">
+      Login
+    </a>
+  </p>
+</Link>
+
                   <form className="space-y-4 md:space-y-6" action="#">
                       <div>
                      

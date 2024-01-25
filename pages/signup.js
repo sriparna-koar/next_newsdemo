@@ -10,7 +10,7 @@ const router=useRouter()
             if(localStorage.getItem('token')){
                 router.push('/')
             }
-        },[])
+        },[router])
     const [name,setname]=useState('');
     const [email,setemail]=useState('');
     const [password,setpassword]=useState('');
@@ -73,14 +73,19 @@ theme="light"
      
       <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <Link href={'/signup'}><h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                  Sign up for your account
-              </h1>
-              </Link>
-              <Link href={'/login'}><p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Already have an account?  <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login</a>
-                  </p>
-                  </Link> 
+         <Link href={'/signup'} passHref>
+  <a className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+    Sign up for your account
+  </a>
+</Link>
+
+<Link href={'/login'} passHref>
+  <a className="text-sm font-light text-gray-500 dark:text-gray-400">
+    Already have an account? <span className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login</span>
+  </a>
+</Link>
+
+
               <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div>
                       <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
