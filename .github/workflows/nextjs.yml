@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os:
-          - windows-latest
+          - windows
     permissions:
       contents: read
       pages: write
