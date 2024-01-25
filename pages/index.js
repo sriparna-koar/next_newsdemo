@@ -5,7 +5,7 @@ import CountrySelector from '../components/CountrySelector';
 import CategorySelector from '../components/CategorySelector';
 import NewsList from '../components/NewsList';
 import Navbar from '../components/Navbar';
-import Link from 'next/link';
+
 
 const Home = () => {
   const [country, setCountry] = useState('us');
@@ -47,9 +47,9 @@ const Home = () => {
   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
   onClick={() => setLoggedIn(true)}
 >
-  <Link href="/login">
+ 
     <a>Login</a>
-  </Link>
+
 </button>
           </div>
         )}
