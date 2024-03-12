@@ -1,4 +1,4 @@
-It's a news app project using Next Js where user can search  by their name and category and it shows the time and date of the publish news if the api fetch is not corect or the news for that category or country is empty then it shows error message " Error in fetchhing news. Please try again later" .
+It's a news app project using Next Js where user can search  by their name and category and it shows the time and date of the publish news if the api fetch is not correct or the news for that category or country is empty then it shows error message " Error in fetchhing news. Please try again later" .
 
 
 ```
