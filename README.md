@@ -65,7 +65,9 @@ npm run dev
 # or
 yarn dev
 ```
-
+```
+tailwind css are for designing and adding effect to the code 
+```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. 
