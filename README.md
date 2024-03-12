@@ -91,3 +91,6 @@ When we search news by country and category
 
 ![WhatsApp Image 2024-03-12 at 12 40 03_63356de0](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/bc582155-0b32-485f-8d8a-afd6b5b59dc9)
 ![WhatsApp Image 2024-03-12 at 12 41 44_5063292f](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/330973cd-d106-47d4-976b-a090ce67b6ef)
+
+When there problem in Api when it is not fetch properly 
+![WhatsApp Image 2024-03-12 at 13 00 46_27d86d34](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/c74e05bd-070a-48ab-afec-89a25029d807)
