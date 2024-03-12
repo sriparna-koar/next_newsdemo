@@ -77,6 +77,7 @@ npm run dev
 When we search news by country and category
 ![WhatsApp Image 2024-03-12 at 12 47 57_09149ae8](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/9e4ce8c8-2988-452a-ae13-db1e68a266f1)
 ![WhatsApp Image 2024-03-12 at 12 47 32_47f60094](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/a2157cb3-451c-4aa0-b2cd-c7dd1eb8ffaf)
+![WhatsApp Image 2024-03-12 at 12 50 16_b65a22ec](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/c456e3d4-bfbf-4a04-9591-3c1fcee15a6f)
 ![WhatsApp Image 2024-03-12 at 12 41 01_84401d30](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/d82bf6ba-6e1a-4f69-bad8-1d0e259aed47)
 
 
