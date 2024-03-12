@@ -83,6 +83,7 @@ When we search news by country and category
 
 
 
+![WhatsApp Image 2024-03-12 at 12 51 02_edaabadb](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/c6404d98-bddd-44a7-af71-5a8c180322d3)
 
 ![WhatsApp Image 2024-03-12 at 12 40 03_63356de0](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/bc582155-0b32-485f-8d8a-afd6b5b59dc9)
 ![WhatsApp Image 2024-03-12 at 12 41 44_5063292f](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/330973cd-d106-47d4-976b-a090ce67b6ef)
