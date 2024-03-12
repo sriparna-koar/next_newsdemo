@@ -3,11 +3,9 @@ It's a news app project using Next Js where user can search  by their name and c
 
 ```
 We need env file to protect out api key for that
-
 .env.local :  are set setup to fetch the News Api key
 
 To install the .env file we need 
-
 npm install dotenv
 
 using 'fetch' we fetch the news with the published date time headlines and category country
