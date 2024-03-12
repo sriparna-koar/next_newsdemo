@@ -11,6 +11,14 @@ npm install dotenv
 using 'fetch' we fetch the news with the published date time headlines and category country
 
 ```
+```
+To set up the project first
+npx create-next-app@12.0.7 projectname
+
+To run the code :
+npm run dev
+```
+
 ``` We can search by country name :
 countries = [
  'us':'United States',
@@ -38,14 +46,8 @@ We can search by category:
     'politics', 
   ##can input more categories
   ];
-To run the code :
-```
-npm run dev
-```
-To set up the project first 
-```
-npx create-next-app@12.0.7 projectname
 
+```
 ```
 We set up project like that in folder: components
 1.file CategorySelector.js file contains different category of news.
