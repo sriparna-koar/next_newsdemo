@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import LoadingBar from 'react-top-loading-bar';
-import Navbar from '../components/Navbar';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  const [user, setuser] = useState({ value: null });
-  const [key, setkey] = useState(0);
+  const [user, setUser] = useState({ value: null });
   const [progress, setProgress] = useState(0);
   const router = useRouter();
 
@@ -24,24 +22,20 @@ function MyApp({ Component, pageProps }) {
 
     const token = localStorage.getItem('token');
     if (token) {
-      setuser({ value: token });
-      setkey(Math.random());
+      setUser({ value: token });
     }
 
     return () => {
       router.events.off('routeChangeStart', handleRouteChangeStart);
       router.events.off('routeChangeComplete', handleRouteChangeComplete);
     };
-  }, [router.events, router.query]); // Include 'router.events' in the dependency array
+  }, [router.events, router.query]);
 
   const logout = () => {
     localStorage.removeItem('token');
-    setuser({ value: null });
-    setkey(Math.random());
+    setUser({ value: null });
     router.push('/');
   };
-
-  const showNavbar = router.pathname === '/';
 
   return (
     <>
@@ -51,7 +45,6 @@ function MyApp({ Component, pageProps }) {
         waitingTime={400}
         onLoaderFinished={() => setProgress(0)}
       />
-      {showNavbar && user.value && <Navbar logout={logout} user={user} />}
       <Component {...pageProps} />
     </>
   );

@@ -1,28 +1,52 @@
 import React from 'react';
 
 const CategorySelector = ({ onSelectCategory }) => {
-    const categories = [
-        'general',
-        'business',
-        'entertainment',
-        'health',
-        'science',
-        'sports',
-        'technology',
-        // Add more categories as needed
-      ];
-      
+  const categories = [
+    'general',
+    'business',
+    'entertainment',
+    'health',
+    'science',
+    'sports',
+    'technology',
+    'politics', 
+  
+  ];
 
   return (
-    <div>
-      <label htmlFor="category">Select Category:</label>
-      <select id="category" onChange={(e) => onSelectCategory(e.target.value)}>
-        {categories.map((category) => (
-          <option key={category} value={category}>
-            {category.charAt(0).toUpperCase() + category.slice(1)}
-          </option>
-        ))}
-      </select>
+    <div className="mt-4">
+      <label htmlFor="category" className="block text-sm font-medium text-white-700 mb-2">Select Category:</label>
+      <div className="relative">
+        <select
+          id="category"
+          onChange={(e) => onSelectCategory(e.target.value)}
+          className="block appearance-none w-full bg-gray-800 border border-gray-700 text-white py-3 px-4 pr-8 rounded-md shadow-sm focus:outline-none focus:bg-gray-900 focus:border-gray-900 transition duration-300 ease-in-out hover:scale-105"
+        >
+          {categories.map((category) => (
+            <option
+              key={category}
+              value={category}
+              className="text-gray-900 bg-gray-100"
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </option>
+          ))}
+        </select>
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg
+            className="h-5 w-5 fill-current transition duration-300 ease-in-out transform hover:rotate-180"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.293 6.707a1 1 0 011.414 0l3.293 3.293a1 1 0 001.414 0l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
   );
 };
