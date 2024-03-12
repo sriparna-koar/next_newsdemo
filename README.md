@@ -9,7 +9,7 @@ npm run dev
 ```
 ```
 We need env file to protect out api key for that
-.env.local :  are set setup to fetch the News Api key
+.env.local : envirnment file are set setup to fetch the News Api key which remain hidden
 
 To install the .env file we need 
 npm install dotenv
