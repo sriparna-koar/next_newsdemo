@@ -8,6 +8,8 @@ We need env file to protect out api key for that
 To install the .env file we need to
 npm install dotenv
 
+using 'fetch' we fetch the news with the published date time headlines and category country
+
 ```
 ``` We can search by country name :
 countries = [
