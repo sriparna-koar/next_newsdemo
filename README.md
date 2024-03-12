@@ -1,11 +1,14 @@
 It's a news app project using Next Js where user can search any nes by their name and category and it shos the time and date of the publish news if the api fetc is not corect or the news for that category or country is empty then it shows error message " Error in fetchhing news. Please try again later" .
 
 To run the code :
-
+```
 npm run dev
-
+```
 To set up the project first 
+```
+npx create-next-app@12.0.7 projectname
 
+```
 
 
 ## Getting Started
