@@ -1,5 +1,31 @@
 It's a news app project using Next Js where user can search  by their name and category and it shows the time and date of the publish news if the api fetch is not corect or the news for that category or country is empty then it shows error message " Error in fetchhing news. Please try again later" .
+``` We can search by country name :
+countries = [
+ 'us':'United States',
+ 'gb':'United Kingdom',
+  'ca':'Canada',
+  'au':'Australia',
+  'de':'Germany',
+  'fr':'France',
+  'in':'India',
+  'jp':'Japan',
+  'br':'Brazil',
+  'mx':'Mexico'
+##Can input more countries
+];
 
+We can search by category:
+ categories = [
+    'general',
+    'business',
+    'entertainment',
+    'health',
+    'science',
+    'sports',
+    'technology',
+    'politics', 
+  ##can input more categories
+  ];
 To run the code :
 ```
 npm run dev
