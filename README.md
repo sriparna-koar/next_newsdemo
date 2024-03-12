@@ -75,4 +75,9 @@ to start the project
 npm run dev
 
 When we search news by country and category
+![WhatsApp Image 2024-03-12 at 12 41 01_84401d30](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/d82bf6ba-6e1a-4f69-bad8-1d0e259aed47)
+
+
+
+
 ![WhatsApp Image 2024-03-12 at 12 40 03_63356de0](https://github.com/sriparna-koar/next_newsdemo/assets/144530081/bc582155-0b32-485f-8d8a-afd6b5b59dc9)
